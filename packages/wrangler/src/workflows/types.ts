@@ -21,7 +21,8 @@ export type InstanceStatus =
 	| "paused"
 	| "errored"
 	| "terminated"
-	| "complete";
+	| "complete"
+	| "waitingForPause";
 
 export type InstanceWithoutDates = {
 	status: InstanceStatus;
@@ -104,3 +105,5 @@ export type InstanceStatusAndLogs = {
 	success: boolean | null;
 	error: { name: string; message: string } | null;
 };
+
+export type InstanceChangeStatusType = "pause" | "resume" | "terminate";
